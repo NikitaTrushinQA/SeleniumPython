@@ -1,0 +1,54 @@
+      							библиотеки
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+import math
+from selenium.webdriver.chrome.service import Service
+import warnings                                                 #для скрытия предупреждения      пример:   warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+from selenium.webdriver.support.ui import Select                #                           
+
+						  поиск плейхолдера
+last_name = browser.find_element(By.XPATH, "//input[@placeholder = 'Input your last name']")
+        last_name.send_keys('Vasilev')
+
+
+                                                   Работа со списками
+#http://suninjuly.github.io/selects1.html
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+browser = webdriver.Chrome()
+browser.get(link)
+
+
+browser.find_element(By.TAG_NAME, "select").click()
+browser.find_element(By.CSS_SELECTOR, "option:nth-child(2)").click()   # или browser.find_element(By.CSS_SELECTOR, "[value='1']").click()
+
+                                                    2  вариант
+
+from selenium.webdriver.support.ui import Select
+select = Select(browser.find_element(By.TAG_NAME, "select"))
+select.select_by_value("1") # ищем элемент с текстом "Python"
+
+#Можно использовать еще два метода: select.select_by_visible_text("text") и select.select_by_index(index).
+#Первый способ ищет элемент по видимому тексту, например, select.select_by_visible_text("Python") найдёт "Python" для нашего примера.
+
+#Второй способ ищет элемент по его индексу или порядковому номеру.
+#Индексация начинается с нуля. Для того чтобы найти элемент с текстом "Python", нужно использовать select.select_by_index(1),
+#так как опция с индексом 0 в данном примере имеет значение по умолчанию равное "--".
+
+                                                Метод execute_script
+from selenium import webdriver
+browser = webdriver.Chrome()
+browser.execute_script("alert('Robots at work');")
+Обратите внимание, что исполняемый JavaScript нужно заключать в кавычки (двойные или одинарные).
+Если внутри скрипта вам также понадобится использовать кавычки, а для выделения скрипта вы уже используете двойные кавычки, то в скрипте следует поставить одинарные:
+
+browser.execute_script("document.title='Script executing';")
+Такой формат записи тоже будет работать:
+
+browser.execute_script('document.title="Script executing";')
+Можно с помощью этого метода выполнить сразу несколько инструкций, перечислив их через точку с запятой. Изменим сначала заголовок страницы, а затем вызовем alert:
+browser.execute_script("document.title='Script executing';alert('Robots at work');")
