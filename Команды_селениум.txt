@@ -106,3 +106,7 @@ new_window = browser.window_handles[1]
 
 first_window = browser.window_handles[0]
 После переключения на новую вкладку поиск и взаимодействие с элементами будут происходить уже на новой странице.
+
+                                                задержка при помощи библиотеки time.
+import time
+time.sleep(1)       #устанавливаем задержку в 1 сек
