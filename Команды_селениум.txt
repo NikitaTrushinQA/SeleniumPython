@@ -146,7 +146,8 @@ message = browser.find_element(By.ID, "verify_message")
 assert "successful" in message.text
 element_to_be_clickable вернет элемент, когда он станет кликабельным, или вернет False в ином случае.
 
-в объекте WebDriverWait используется функция until, в которую передается правило ожидания, элемент, а также значение, по которому мы будем искать элемент. В модуле expected_conditions есть много других правил, которые позволяют реализовать необходимые ожидания:
+в объекте WebDriverWait используется функция until, в которую передается правило ожидания, элемент, а также значение, по которому мы будем искать элемент.
+В модуле expected_conditions есть много других правил, которые позволяют реализовать необходимые ожидания:
 
 title_is
 title_contains
@@ -154,7 +155,12 @@ presence_of_element_located
 visibility_of_element_located
 visibility_of
 presence_of_all_elements_located
-text_to_be_present_in_element
+
+          text_to_be_present_in_element    
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+#button = WebDriverWait(browser, время).until(EC.text_to_be_present_in_element((By.ID, "здесь пишем ID"),"здесь пишем текст))
+
 text_to_be_present_in_element_value
 frame_to_be_available_and_switch_to_it
 invisibility_of_element_located
