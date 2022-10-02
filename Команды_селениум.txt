@@ -172,4 +172,15 @@ element_selection_state_to_be
 element_located_selection_state_to_be
 alert_is_present
 
+                                                           Составные сообщения об ошибках 
+assert self.is_element_present('new_announcement_button', timeout=30), "No new announcement button on profile page"
 
+                                                           Форматирование строк с помощью str.format
+							   
+print("Let's count together: {}, then goes {}, and then {}".format("one", "two", "three"))
+Таким образом мы можем удобно компоновать ожидаемое и фактическое значение в одну строку.
+							Форматирование строк с помощью f-strings
+							
+catalog_text = self.catalog_link.text # считываем текст и записываем его в переменную
+assert catalog_text == "Каталог", \
+    f"Wrong language, got {catalog_text} instead of 'Каталог'"  
