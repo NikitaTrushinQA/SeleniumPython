@@ -193,3 +193,6 @@ def test_name_for_your_test():
 
 -Тесты обязательно должны находиться в специальном тестовом классе.
 -Вместо assert должны использоваться специальные assertion методы.
+							Фиксируем пакеты в requirements.txt 
+pip freeze > requirements.txt   #Эта команда сохранит все версии пакетов в специальный файл requirements.txt.
+pip install -r requirements.txt  #В свежем окружении все пакеты установлены одной командой!
