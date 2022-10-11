@@ -356,3 +356,17 @@ In both cases this will not cause the test suite to fail as a whole. This is par
 If True, the function will be shown in the terminal output as xfailed if it fails, but if it unexpectedly passes then it will fail the test suite.
 This is particularly useful to mark functions that are always failing and there should be a clear indication 
 if they unexpectedly start to pass (for example a new release of a library fixes a known bug).
+								Параметризация тестов
+В @pytest.mark.parametrize() нужно передать параметр, который должен изменяться, и список значений параметра
+пример:
+@pytest.mark.parametrize('language', ["ru", "en-gb"])
+def test_guest_should_see_login_link(browser, language):
+    link = f"http://selenium1py.pythonanywhere.com/{language}/"
+    browser.get(link)
+    browser.find_element(By.CSS_SELECTOR, "#login_link")
+    
+Можно задавать параметризацию также для всего тестового класса, чтобы все тесты в классе запустились с заданными параметрами.
+В таком случае отметка о параметризации должна быть перед объявлением класса: 
+
+@pytest.mark.parametrize('language', ["ru", "en-gb"])
+class TestLogin:
