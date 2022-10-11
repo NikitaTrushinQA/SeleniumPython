@@ -356,6 +356,24 @@ In both cases this will not cause the test suite to fail as a whole. This is par
 If True, the function will be shown in the terminal output as xfailed if it fails, but if it unexpectedly passes then it will fail the test suite.
 This is particularly useful to mark functions that are always failing and there should be a clear indication 
 if they unexpectedly start to pass (for example a new release of a library fixes a known bug).
+							Conftest.py — конфигурация тестов
+Для хранения часто употребимых фикстур и хранения глобальных настроек нужно использовать файл conftest.py,
+который должен лежать в директории верхнего уровня в вашем проекте с тестами. 
+Можно создавать дополнительные файлы conftest.py в других директориях, но тогда настройки в этих файлах будут применяться только к тестам в под-директориях.
+пример:
+	conftest.py:
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+@pytest.fixture(scope="function")
+def browser():
+    print("\nstart browser for test..")
+    browser = webdriver.Chrome()
+    yield browser
+    print("\nquit browser..")
+    browser.quit()					
+    
 								Параметризация тестов
 В @pytest.mark.parametrize() нужно передать параметр, который должен изменяться, и список значений параметра
 пример:
