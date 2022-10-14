@@ -417,3 +417,7 @@ def browser(request):
     print("\nquit browser..")
     browser.quit()
     
+Можно задать значение параметра по умолчанию, чтобы в командной строке не обязательно было указывать параметр --browser_name, например, так:
+
+parser.addoption('--browser_name', action='store', default="chrome",
+                 help="Choose browser: chrome or firefox")
