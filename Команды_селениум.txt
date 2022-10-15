@@ -421,3 +421,5 @@ def browser(request):
 
 parser.addoption('--browser_name', action='store', default="chrome",
                  help="Choose browser: chrome or firefox")
+									Плагины и перезапуск тестов
+pip install pytest-rerunfailures
