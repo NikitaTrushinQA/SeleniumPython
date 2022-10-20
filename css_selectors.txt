@@ -1,4 +1,4 @@
-CSS selectors
+                                                                              CSS selectors
 CSS selectors define the pattern to select elements to which a set of CSS rules are then applied.
 
 Note: There are no selectors or combinators to select parent items, siblings of parents, or children of parent siblings.
