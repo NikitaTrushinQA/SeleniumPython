@@ -448,3 +448,7 @@ browser = webdriver.Chrome(options=options)
 fp = webdriver.FirefoxProfile()
 fp.set_preference("intl.accept_languages", user_language)
 browser = webdriver.Firefox(firefox_profile=fp)
+
+									Создание скриншотов
+capture_path = 'C:/capture/your_desired_filename.png'
+driver.save_screenshot(capture_path)
