@@ -452,3 +452,31 @@ browser = webdriver.Firefox(firefox_profile=fp)
 									Создание скриншотов
 capture_path = 'C:/capture/your_desired_filename.png'
 driver.save_screenshot(capture_path)
+									Обработка Cookie в Selenium
+Обработка файлов cookie в Selenium WebDriver является одним из распространенных сценариев, с которым вам,
+возможно, придется иметь дело при автоматизации. Можно выполнять различные операции, такие как добавление,
+удаление, получение имени файла cookie и многое другое.
+
+driver.add_cookie()
+Этот метод помогает настроить файл cookie для сессии Selenium. Он принимает значения в виде пары ключ-значение.
+
+# Go to the domain
+driver.get("https://www.lambdatest.com/")
+
+# Now set the cookie. 
+cookie = {'name' : 'user', 'value' : 'vinayak'}
+driver.add_cookie(cookie)
+driver.get_cookies()
+Этот метод выводит все доступные файлы cookie для текущей сессии Selenium.
+
+# Go to the domain
+driver.get("https://www.lambdatest.com/")
+
+driver.get_cookies()
+driver.delete_cookie()
+Есть возможность удалить определенный файл cookie или все файлы cookie, связанные с текущей сессией Selenium.
+
+# delete one cookie
+driver.delete_cookie(cookie)
+# delete all cookies
+driver.delete_all_cookies()
