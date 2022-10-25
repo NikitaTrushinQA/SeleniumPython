@@ -480,3 +480,17 @@ driver.delete_cookie()
 driver.delete_cookie(cookie)
 # delete all cookies
 driver.delete_all_cookies()
+
+                                                                   Перетаскивание веб-элемента
+Перетаскивание объектов является одним из широко используемых сценариев в популярных приложениях (или программах), таких как Canvas, Google Drive, Trello, Asana и т.д. Метод drag_and_drop(элемент, цель) в Selenium помогает автоматизировать функционал перетаскивания веб-элементов из источника и переноса их в целевую область (или элемент).
+
+У класса Actions в Selenium есть два метода, с помощью которых вы можете выполнять операции перетаскивания при тестировании кроссбраузерной совместимости. Обязательно ознакомьтесь с нашим подробным руководством, в котором есть информация о том, как выполнять перетаскивание в Selenium.
+
+Вот простой пример использования метода drag_and_drop():
+
+element = driver.find_element_by_name("source")
+target = driver.find_element_by_name("target")
+
+from selenium.webdriver import ActionChains
+action_chains = ActionChains(driver)
+action_chains.drag_and_drop(element, target).perform()
