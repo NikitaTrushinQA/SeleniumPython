@@ -524,3 +524,8 @@ pytest-pep8: a --pep8 option to enable PEP8 compliance checking.
 pytest-flakes: check source code with pyflakes.
 
 allure-pytest: report test results via allure-framework.
+
+                                                                Получение кода страницы
+Метод page_source() в Selenium WebDriver используется для получения кода страницы.
+
+page_source = driver.page_source
