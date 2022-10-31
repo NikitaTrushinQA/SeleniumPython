@@ -1,11 +1,11 @@
-                                                                              CSS selectors
+                                                                              #CSS selectors
 CSS selectors define the pattern to select elements to which a set of CSS rules are then applied.
 
 Note: There are no selectors or combinators to select parent items, siblings of parents, or children of parent siblings.
 
 CSS selectors can be grouped into the following categories based on the type of elements they can select.
 
-Basic selectors
+#Basic selectors
 Universal selector
 Selects all elements. Optionally, it may be restricted to a specific namespace or to all namespaces.
 
@@ -13,28 +13,28 @@ Syntax: * ns|* *|*
 
 Example: * will match all the elements of the document.
 
-Type selector
+#Type selector
 Selects all elements that have the given node name.
 
 Syntax: elementname
 
 Example: input will match any <input> element.
 
-Class selector
+#Class selector
 Selects all elements that have the given class attribute.
 
 Syntax: .classname
 
 Example: .index will match any element that has class="index".
 
-ID selector
+#ID selector
 Selects an element based on the value of its id attribute. There should be only one element with a given ID in a document.
 
 Syntax: #idname
 
 Example: #toc will match the element that has id="toc".
 
-Attribute selector
+#Attribute selector
 Selects all elements that have the given attribute.
 
 Syntax: [attr] [attr=value] [attr~=value] [attr|=value] [attr^=value] [attr$=value] [attr*=value]
@@ -49,7 +49,7 @@ Syntax: A, B
 
 Example: div, span will match both <span> and <div> elements.
 
-Combinators
+#Combinators
 Descendant combinator
 The " " (space) combinator selects nodes that are descendants of the first element.
 
@@ -57,55 +57,55 @@ Syntax: A B
 
 Example: div span will match all <span> elements that are inside a <div> element.
 
-Child combinator
+#Child combinator
 The > combinator selects nodes that are direct children of the first element.
 
 Syntax: A > B
 
 Example: ul > li will match all <li> elements that are nested directly inside a <ul> element.
 
-General sibling combinator
+#General sibling combinator
 The ~ combinator selects siblings. This means that the second element follows the first (though not necessarily immediately), and both share the same parent.
 
 Syntax: A ~ B
 
 Example: p ~ span will match all <span> elements that follow a <p>, immediately or not.
 
-Adjacent sibling combinator
+#Adjacent sibling combinator
 The + combinator matches the second element only if it immediately follows the first element.
 
 Syntax: A + B
 
 Example: h2 + p will match the first <p> element that immediately follow an <h2> element.
 
-Column combinator Experimental
+#Column combinator Experimental
 The || combinator selects nodes which belong to a column.
 
 Syntax: A || B
 
 Example: col || td will match all <td> elements that belong to the scope of the <col>.
 
-Pseudo-classes and pseudo-elements
-Pseudo classes
+#Pseudo-classes and pseudo-elements
+#Pseudo classes
 The : pseudo allow the selection of elements based on state information that is not contained in the document tree.
 
 Example: a:visited will match all <a> elements that have been visited by the user.
 
-Pseudo elements
+#Pseudo elements
 The :: pseudo represent entities that are not included in HTML.
 
 Example: p::first-line will match the first line of all <p> elements.
 
-Structure of a selector
+#Structure of a selector
 The term 'selector' can refer to one of the following:
 
-Simple selector
+#Simple selector
 A selector with a single component, such as a single id selector or type selector,
 that's not used in combination with or contains any other selector component or combinator.
 A given element is said to match a simple selector when that simple selector accurately describes the element.
 All basic selectors, attributes, and single pseudo-classes and pseudo-elements are simple selectors.
 
-Compound selector
+#Compound selector
 A sequence of simple selectors that are not separated by a combinator. A compound selector represents a set of simultaneous conditions on a single element.
 A given element is said to match a compound selector when the element matches all the simple selectors in the compound selector.
 
@@ -115,7 +115,7 @@ Since whitespace represents the descendant combinator, no whitespace is allowed 
 
 Example: a#selected {...}
 
-Complex selector
+#Complex selector
 A sequence of one or more simple and/or compound selectors that are separated by combinators.
 A complex selector represents a set of simultaneous conditions on a set of elements.
 These conditions apply in the context of relationships described by the combinators.
@@ -123,13 +123,13 @@ A given element is said to match a complex selector when the element matches com
 
 Examples: a#selected > .icon {...}, .box h2 + p {...}, a .icon {...}
 
-Relative selector
+#Relative selector
 A selector that represents an element relative to one or more anchor elements preceded by a combinator. 
 Relative selectors that don't begin with an explicit combinator have an implied descendant combinator.
 
 Examples: + div#topic > #reference {...}, > .icon {...}
 
-Selector list
+#Selector list
 A comma-separated list of simple, compound, or complex selectors. 
 If the constituent selector type of a selector list is important but unspecified, it is called a complex selector list. 
 A given element is said to match a selector list when the element matches any (at least one) of the selectors in that selector list.
