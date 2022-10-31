@@ -124,11 +124,15 @@ A given element is said to match a complex selector when the element matches com
 Examples: a#selected > .icon {...}, .box h2 + p {...}, a .icon {...}
 
 Relative selector
-A selector that represents an element relative to one or more anchor elements preceded by a combinator. Relative selectors that don't begin with an explicit combinator have an implied descendant combinator.
+A selector that represents an element relative to one or more anchor elements preceded by a combinator. 
+Relative selectors that don't begin with an explicit combinator have an implied descendant combinator.
 
 Examples: + div#topic > #reference {...}, > .icon {...}
 
 Selector list
-A comma-separated list of simple, compound, or complex selectors. If the constituent selector type of a selector list is important but unspecified, it is called a complex selector list. A given element is said to match a selector list when the element matches any (at least one) of the selectors in that selector list. Read more about when a selector list is deemed invalid and how to construct a forgiving selector list.
+A comma-separated list of simple, compound, or complex selectors. 
+If the constituent selector type of a selector list is important but unspecified, it is called a complex selector list. 
+A given element is said to match a selector list when the element matches any (at least one) of the selectors in that selector list.
+Read more about when a selector list is deemed invalid and how to construct a forgiving selector list.
 
 Example: #main, article.heading {...}
