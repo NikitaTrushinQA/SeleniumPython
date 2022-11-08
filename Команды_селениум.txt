@@ -546,4 +546,10 @@ from selenium.webdriver.support.relative_locator import locate_with
 passwordField = driver.find_element(By.ID, "password")
 emailAddressField = driver.find_element(locate_with(By.TAG_NAME,  "input").above(passwordField))
 
+									Below
+Going the other way around, let's find the password field, which is below the email address field.
 
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.relative_locator import locate_with
+emailAddressField = driver.find_element(By.ID, "email")
+passwordField = driver.find_element(locate_with(By.TAG_NAME, "input").below(emailAddressField))
