@@ -151,19 +151,19 @@ element_to_be_clickable вернет элемент, когда он стане�
 в объекте WebDriverWait используется функция until, в которую передается правило ожидания, элемент, а также значение, по которому мы будем искать элемент.
 В модуле expected_conditions есть много других правил, которые позволяют реализовать необходимые ожидания:
 
-title_is
-title_contains
-presence_of_element_located
-visibility_of_element_located
-visibility_of
-presence_of_all_elements_located
+title_is(title)                              (An expectation for checking the title of a page.)
+title_contains(title)                        (An expectation for checking that the title contains a case-sensitive substring).
+presence_of_element_located(locator)         (An expectation for checking that an element is present on the DOM of a page.)
+visibility_of_element_located		     (An expectation for checking that all elements are present on the DOM of a page and visible.)
+visibility_of(element)			     (An expectation for checking that an element, known to be present on the DOM of a page, is visible.)
+presence_of_all_elements_located	     (An expectation for checking that there is at least one element present on a web page.)
 
           text_to_be_present_in_element    
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 #button = WebDriverWait(browser, время).until(EC.text_to_be_present_in_element((By.ID, "здесь пишем ID"),"здесь пишем текст))
 
-text_to_be_present_in_element_value
+          text_to_be_present_in_element_value  (An expectation for checking if the given text is present in the element’s value.)
 frame_to_be_available_and_switch_to_it
 invisibility_of_element_located
 element_to_be_clickable
