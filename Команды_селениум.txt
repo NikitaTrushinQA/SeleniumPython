@@ -539,7 +539,8 @@ from selenium.webdriver.support.relative_locator import locate_with
                                                       Available relative locators(above,bellow,near,To the Left Of,To the Right Of,Near)
 https://saucelabs.com/resources/articles/selenium-4-relative-locators
                                                                        Above
-We would like to find the email address field, which is above the password field. To do that, we find the password field through its id, and then we use the above relative locator.
+We would like to find the email address field, which is above the password field. To do that, we find the password field through its id,
+and then we use the above relative locator.
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.relative_locator import locate_with
