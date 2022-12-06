@@ -13,18 +13,11 @@ from selenium.webdriver.support.ui import Select                #
 						  поиск плейхолдера
 last_name = browser.find_element(By.XPATH, "//input[@placeholder = 'Input your last name']")
         last_name.send_keys('Vasilev')
-
-                                                                   Выбор опции
-Select(элемент) предоставляет полезные методы для взаимодействия с раскрывающимися списками, выбора элементов и многого другого.
-
-Так можно выбрать элемент по индексу:
-
-from selenium.webdriver.support.ui import Select
-select = Select(driver.find_element_by_id('city'))
-select.select_by_index(index)                          #Метод принимает целочисленное значение - индекс опции, которую мы хотим выбрать.
-select.select_by_visible_text("text")                  #Метод принимает строковое значение и выбирает опцию, в которой есть нужный текст.
-select.select_by_value(value)                          #Метод принимает строковое значение и выбирает параметр с тем же значением атрибута
-select.deselect_all()                                  #Метод позволяет отменить выбор всех выбранных опций.
+                                                              Метод get_attribute
+robots_radio = browser.find_element(By.ID, "robotsRule")
+robots_checked = robots_radio.get_attribute("checked")
+Значение атрибута представляет собой строку. Если значение атрибута отсутствует, то это равносильно значению атрибута равному "false"
+Если атрибута нет, то метод get_attribute вернёт значение None. Применим метод get_attribute ко второму radiobutton, и убедимся, что атрибут отсутствует
 
                                                    Работа со списками
 #http://suninjuly.github.io/selects1.html
