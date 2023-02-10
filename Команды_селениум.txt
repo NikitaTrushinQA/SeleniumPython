@@ -558,3 +558,17 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.relative_locator import locate_with
 emailAddressField = driver.find_element(By.ID, "email")
 passwordField = driver.find_element(locate_with(By.TAG_NAME, "input").below(emailAddressField))
+
+                                                                  двойной клик по элементу
+from selenium import webdriver 
+from selenium.webdriver.common.action_chains import ActionChains
+  
+# create webdriver object
+driver = webdriver.Chrome()
+  
+link = 'https://demoqa.com/buttons'
+browser.get(link)
+double_click_button = browser.find_element(By.ID,'doubleClickBtn') 
+action = ActionChains(driver)                                    # create action chain object
+action.double_click(on_element = double_click_button)            # double click the item 
+action.perform()                                                 # perform the operation
